@@ -66,6 +66,7 @@ const hoverFalse = (e)=>{
           setFourth(false);
       }
     setHover(false);
+    
   }
   let [btnHover,setbtnHover] = useState(false)
   return (
