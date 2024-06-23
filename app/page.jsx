@@ -49,7 +49,7 @@ export default function Home() {
     </Image>
     <div className={`absolute w-[100vw] text-white bottom-24`}>
       <Marquee direction="right" play={!direction} speed={400} className="overflow-hidden" ref={ref}>
-      <Marquee speed={200} direction="left" className={`overflow-hidden text-9xl ${roboto_bold.className}`}>Aman Kumar - SherGill</Marquee>
+      <Marquee speed={400} direction="left" play={direction} className={`overflow-hidden text-9xl ${roboto_bold.className}`}>Aman Kumar - SherGill</Marquee>
       </Marquee>
     </div>
   </div>
