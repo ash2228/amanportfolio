@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Roboto, Inter_Tight } from "next/font/google";
 import Navbar from "./components/navbar";
 import Recentwork from "./components/recentwork";
+import Marquee from "react-fast-marquee";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 const roboto_bold = Inter_Tight({ weight: "500", subsets: ["latin"] });
@@ -42,9 +43,6 @@ export default function Home() {
   {nav&&(<Navbar/>)}  
   <div className="h-[100vh] bg-[#999D9E] pt-2">
     <span className={`ml-5 text-white ${roboto.className}`}>© Code By Ash</span>
-    <Image>
-
-    </Image>
     <div className={`absolute w-[100vw] text-white bottom-24`}>
       <Marquee direction="right" play={!direction} speed={400} className="overflow-hidden" ref={ref}>
       <Marquee speed={200} direction="left" className={`overflow-hidden text-9xl ${roboto_bold.className}`}>Aman Kumar - SherGill</Marquee>

@@ -70,7 +70,7 @@ const hoverFalse = (e)=>{
   let [btnHover,setbtnHover] = useState(false)
   return (
     <>
-    <div onClick={navHandler} className={`${nav?"bg-[#455CE9]":"bg-black"} z-[150] transition-colors duration-500 rounded-full h-[100px] w-[100px] right-10 top-10 float-right sticky text-white overflow-hidden`} id="navBtn" onMouseEnter={()=>setbtnHover(!btnHover)} onMouseLeave={()=>setbtnHover(!btnHover)}>
+    <div onClick={navHandler} className={`${nav?"bg-[#455CE9]":"bg-black"} z-[150] transition-colors duration-500 rounded-full h-[100px] w-[100px] right-20 top-20 float-right sticky text-white overflow-hidden`} id="navBtn" onMouseEnter={()=>setbtnHover(!btnHover)} onMouseLeave={()=>setbtnHover(!btnHover)}>
     <div className={`flex top-[45px] left-[35px] absolute gap-2 flex-col z-50 ${nav&&"rotate-45 gap-[10px]  -mt-[1.5px]"}`}>
             <hr className={`w-[30px] ${nav&&"translate-y-[6px]"} transition`} />
             <hr className={`w-[30px] ${nav&&"-translate-y-[5px] rotate-90"} transition`} />
