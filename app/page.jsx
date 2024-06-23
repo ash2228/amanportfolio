@@ -11,9 +11,13 @@ const roboto = Roboto({weight:"400",subsets:["latin"]});
 const roboto_bold = Inter_Tight({weight:"500",subsets:["latin"]});
 export default function Home() {
   const [nav,setNav] = useState(false);
-  window.addEventListener("scroll",()=>{
-    setNav(window.scrollY>200);
-  })
+  if (typeof window !== 'undefined') {
+    window.addEventListener("scroll",()=>{
+      setNav(window.scrollY>200);
+    })
+    // Code that depends on `window` or browser APIs
+  }
+  
   const [hover,setHover] = useState(false);
   const hoverHandler = ()=>{
     setHover(!hover);
@@ -22,22 +26,26 @@ export default function Home() {
   let [prev,setPrev] = useState(0);
   const ref = useRef();
   useEffect(()=>{
-    window.addEventListener("scroll",()=>{
-    if(prev>window.scrollY){
-      setDirection(false);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll",()=>{
+      if(prev>window.scrollY){
+        setDirection(false);
+      }
+      if(prev<window.scrollY){
+        setDirection(true);
+      }
+      prev = window.scrollY
+      })
+      // Code that depends on `window` or browser APIs
     }
-    if(prev<window.scrollY){
-      setDirection(true);
-    }
-    prev = window.scrollY
-    })
+    
   },[])
   return(<>
   {nav&&(<Navbar/>)}  
   <div className="h-[100vh] bg-[#999D9E] pt-2">
     <span className={`ml-5 text-white ${roboto.className}`}>© Code By Ash</span>
     <Image>
-      
+
     </Image>
     <div className={`absolute w-[100vw] text-white bottom-24`}>
       <Marquee direction="right" play={!direction} speed={400} className="overflow-hidden" ref={ref}>

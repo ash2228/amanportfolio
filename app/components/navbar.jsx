@@ -15,7 +15,7 @@ export default function Navbar() {
     a.style.overflowY = nav?"hidden":"scroll";
   },[nav])
   useEffect(()=>{
-    if(window.innerWidth>1300){
+    if(window.innerWidth>1300 && typeof window !== 'undefined'){
       function gimble(elementID){
       let but = document.getElementById(elementID);
     let boundingRect = but.getBoundingClientRect();
