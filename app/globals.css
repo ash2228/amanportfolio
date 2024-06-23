@@ -1,33 +1,211 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+    overflow-x: hidden;
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;
+    
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::-webkit-scrollbar {
+    display: none;
   }
+@keyframes entry {
+    0%{
+        transform: translateX(37vw);
+        display: block;
+        border-radius: 50%;
+    }
+    35%{
+        border-radius: 50%;
+    }
+    48%{
+        border-radius: 0%;
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes leave {
+    80%{
+        border-radius: 50%;
+    }
+    100%{
+        border-radius: 50%;
+        transform: translateX(37vw);
+        display: none;
+    }
 }
+@keyframes hid{
+    0%{
+        display: block;
+    }
+    100%{
+        display: none;
+    }
+}
+.hid-nav{
+    animation: hid 1s forwards;
+}
+.show-nav{
+    animation: reverse hid 1s forwards;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+}
+.nav{
+    animation: entry 1s ease-in-out forwards;
+}
+.nav-hid{
+    animation:leave 1s ease-in-out forwards;
+}
+@media only screen and (max-width:850px) {
+    @keyframes entry {
+        0%{
+            transform: translateX(100vw);
+            display: block;
+            border-radius: 50%;
+        }
+        35%{
+            border-radius: 50%;
+        }
+        48%{
+            border-radius: 0%;
+        }
+        100%{
+            transform: translateX(0px);
+        }
+        
+    }
+    @keyframes leave {
+        80%{
+            border-radius: 50%;
+        }
+        100%{
+            border-radius: 50%;
+            transform: translateX(100vw);
+            display: none;
+        }
+    }
+}
+#home{
+animation:homeEnter 0.8s ease-in-out forwards ;
+}
+#home-leave{
+animation:homeLeave 0.8s ease-in-out forwards ;
+}
+#work{
+animation:homeEnter 0.9s ease-in-out forwards ;
+}
+#work-leave{
+animation:homeLeave 0.9s ease-in-out forwards ;
+}
+#about{
+animation:homeEnter 0.9s ease-in-out forwards ;
+}
+#about-leave{
+animation:homeLeave 0.9s ease-in-out forwards ;
+}
+#contact{
+animation:homeEnter 1s ease-in-out forwards ;
+}
+#contact-leave{
+animation:homeLeave 1s ease-in-out forwards ;
+}
+@keyframes homeEnter {
+    0%{
+        transform: translateX(30vw);
+        opacity: 0%;
+    }
+
+    50%{
+        opacity: 10%;
+        transform: translate(20vw);
+    }
+}
+@keyframes homeLeave {
+    80%{
+        transform: translateX(10vw);
+    }
+    100%{
+        opacity: 10%;
+    }
+}
+@keyframes appear{
+    from{
+    opacity: 0;
+    transform: translateX(-50%);
+}
+to{
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+@keyframes appear2{
+    from{
+    opacity: 0;
+    transform: translateX(50%);
+}
+to{
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+@keyframes aboutanim{
+    0%{
+    opacity: 0;
+    transform: translateY(100%);
+}
+50%{
+    opacity: 1;
+}
+100%{
+    transform: translateY(0);
+    }
+    }
+.helping{
+    animation:appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.help{
+    animation:appear2 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes hoverEntry {
+    0%{
+        transform: translateY(100%);
+    }
+    
+}
+@keyframes hoverLeave {
+    100%{
+        transform: translateY(-200px);
+    }
+    
+}
+.hovered{
+    animation: hoverEntry 0.3s forwards;
+    background-color:#455CE9;
+}
+.notHovered{
+    animation: hoverLeave 0.3s forwards;
+    background-color:#455CE9;
+}
+.aboutBtn{
+    animation:aboutanim linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 90%;
+}
+@keyframes scaleNav {
+    0%{
+        transform: scale(0%);
+    }
+}
+#navBtn{
+    animation:scaleNav linear 0.5s;
+    animation-range: entry 0% cover;
+    transition: 0.3s;
 }
