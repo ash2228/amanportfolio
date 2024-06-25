@@ -209,3 +209,6 @@ to{
     animation-range: entry 0% cover;
     transition: 0.3s;
 }
+.scaleDiv{
+    animation:scaleNav linear 0.5s;
+}
