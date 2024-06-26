@@ -19,26 +19,56 @@ export default function Recentwork(){
     setX(e.clientX-500);
     setY(e.clientY-200);
     setWorkHover(true);
-    if(first){
-        let a = document.getElementById("first");
-        a.scrollIntoView({behavior:"smooth"})
-    }
-    if(second){
-        let a = document.getElementById("second");
-        a.scrollIntoView({behavior:"smooth"})
-    }
-    if(three){
-        let a = document.getElementById("three");
-        a.scrollIntoView({behavior:"smooth"})
-    }
-    if(four){
-        let a = document.getElementById("four");
-        a.scrollIntoView({behavior:"smooth"})
+    if(document!==undefined){
+        if(first){
+            let a = document.getElementById("first");
+            a.scrollIntoView({behavior:"smooth"})
+        }
+        if(second){
+            let a = document.getElementById("second");
+            a.scrollIntoView({behavior:"smooth"})
+        }
+        if(three){
+            let a = document.getElementById("three");
+            a.scrollIntoView({behavior:"smooth"})
+        }
+        if(four){
+            let a = document.getElementById("four");
+            a.scrollIntoView({behavior:"smooth"})
+        }
     }
   }
 
     return(<div className="h-[400vh] xl:mt-20 px-8 mt-52">
         <span className="xl:ml-[20%] text-[#aeaeae] text-xs">RECENT WORK</span>
+        <div className="xl:hidden flex flex-col gap-10 mt-24">
+            <div className="flex flex-col gap-5">
+            <div className="bg-[#EFEFEF] py-10 px-5">
+            <Image src="/thumb2.png" alt="" width={400} height={400} id="first" />
+            </div>
+            <span className={`font-bold ${roboto.className} text-3xl`}>Ashlee</span>
+            <hr />
+            <div>
+                <span>Grading And Editing</span>
+                <span className="float-right">2024</span>
+            </div>
+            </div>
+            <div className="flex flex-col gap-5">
+            <div className="bg-[#EFEFEF] py-10 px-5">
+            <Image src="/football.png" alt="" width={400} height={400} id="second"  />
+            </div>
+            <span className={`font-bold ${roboto.className} text-3xl`}>The Case</span>
+            <hr />
+            <div>
+                <span>Transition And Editing</span>
+                <span className="float-right">2024</span>
+            </div>
+            </div>
+            <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:hidden mx-auto aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
+      <h1 className="absolute z-50 top-[23px] left-[40px]">More work<sup>6</sup></h1>
+      <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
+      </button>
+        </div>
         <div className="flex-col content-center justify-between mt-10 hidden xl:flex" onMouseMove={workHover} onMouseLeave={()=>{setWorkHover(false)}}>
         <div className="flex-col content-center justify-between hidden xl:flex" onMouseEnter={()=>{setFirst(true)}} onMouseLeave={()=>{setFirst(false)}}>
             <hr className="border w-[80%] m-auto" />
@@ -71,7 +101,7 @@ export default function Recentwork(){
             </div>
         </div>
         <div className="flex content-center justify-center">
-        <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:inline hidden mt-24 ml-20 aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
+        <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:inline hidden mt-24 aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
       <h1 className="absolute z-50 top-[23px] left-[40px]">More work<sup>4</sup></h1>
       <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
       </button>
