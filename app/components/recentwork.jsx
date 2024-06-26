@@ -88,12 +88,12 @@ export default function Recentwork(){
       <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
       </button>
         </div>
-        <div style={{ position: 'fixed', left: x, top: y }} className={`hidden border ${HoverOnWork&&"xl:block scaleDiv"} bg-[#EFEFEF] content-center p-10`} id="slider">
-            <div className="h-[200px] overflow-scroll flex flex-col gap-40">
-            <Image src="/thumb2.png" alt="" width={400} height={400} ref={first} />
-            <Image src="/football.png" alt="" width={400} height={400} ref={second}  />
-            <Image src="/thumb3.png" alt="" width={400} height={400} ref={three}  />
-            <Image src="/thumb5.png" alt="" width={400} height={400} ref={four} />
+        <div style={{ position: 'fixed', left: x, top: y }} className={`hidden border ${HoverOnWork&&"xl:block scaleDiv"} content-center`} id="slider">
+            <div className="h-[280px] overflow-scroll flex flex-col">
+            <Image src="/thumb2.png" alt="" width={400} height={400} ref={first} className="py-10 px-5 bg-[#EFEFEF]" />
+            <Image src="/football.png" alt="" width={400} height={400} ref={second} className="py-10 px-5 bg-blue-500" />
+            <Image src="/thumb3.png" alt="" width={400} height={400} ref={three} className="py-10 px-5 bg-yellow-200" />
+            <Image src="/thumb5.png" alt="" width={400} height={400} ref={four} className="py-10 px-5 bg-green-500" />
             </div>
         </div>
       </div>)
