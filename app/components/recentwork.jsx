@@ -16,7 +16,7 @@ export default function Recentwork(){
     setHover(!hover);
   }
   const workHover = (e)=>{
-    setX(e.clientX-500);
+    setX(e.clientX+20);
     setY(e.clientY-200);
     setWorkHover(true);
   }
@@ -52,32 +52,32 @@ export default function Recentwork(){
       </button>
         </div>
         <div className="flex-col content-center justify-between mt-10 hidden xl:flex" onMouseMove={workHover} onMouseLeave={()=>{setWorkHover(false)}}>
-        <div className="flex-col content-center justify-between hidden xl:flex" onMouseEnter={()=>{first.current.scrollIntoView({behavior: 'smooth'})}}>
+        <div className="flex-col content-center justify-between hidden xl:flex group" onMouseEnter={()=>{first.current.scrollIntoView({behavior: 'smooth'})}}>
             <hr className="border w-[80%] m-auto" />
-            <div className="py-16 px-60">
-                <span className={`font-bold ${roboto.className} text-8xl`}>Ashlee</span>
-                <span className={`${roboto.className} float-right mt-12`}>Grading & Editing</span>
+            <div className="py-16 px-60 hover:px-56 transition-all">
+                <span className={`font-bold ${roboto.className} text-8xl group-hover:opacity-25 transition`}>Ashlee</span>
+                <span className={`${roboto.className} float-right mt-12 group-hover:opacity-25 transition`}>Grading & Editing</span>
             </div>
             </div>
-        <div className="flex-col content-center justify-between hidden xl:flex" onMouseEnter={()=>{second.current.scrollIntoView({behavior: 'smooth'})}}>
+        <div className="flex-col content-center justify-between hidden xl:flex group" onMouseEnter={()=>{second.current.scrollIntoView({behavior: 'smooth'})}}>
             <hr className="border w-[80%] m-auto" />
-            <div className="py-16 px-60">
-                <span className={`font-bold ${roboto.className} text-8xl`}>The Case</span>
-                <span className={`${roboto.className} float-right mt-12`}>Transitions & Editing</span>
+            <div className="py-16 px-60 hover:px-56 transition-all">
+                <span className={`font-bold ${roboto.className} text-8xl group-hover:opacity-25 transition`}>The Case</span>
+                <span className={`${roboto.className} float-right mt-12 group-hover:opacity-25 transition`}>Transitions & Editing</span>
             </div>
             </div>
-        <div className="flex-col content-center justify-between hidden xl:flex" onMouseEnter={()=>{three.current.scrollIntoView({behavior: 'smooth'})}}>
+        <div className="flex-col content-center justify-between hidden xl:flex group" onMouseEnter={()=>{three.current.scrollIntoView({behavior: 'smooth'})}}>
             <hr className="border w-[80%] m-auto" />
-            <div className="py-16 px-60">
-                <span className={`font-bold ${roboto.className} text-8xl`}>Brand™</span>
-                <span className={`${roboto.className} float-right mt-12`}>Transitions & Editing</span>
+            <div className="py-16 px-60 hover:px-56 transition-all">
+                <span className={`font-bold ${roboto.className} text-8xl group-hover:opacity-25 transition`}>Brand™</span>
+                <span className={`${roboto.className} float-right mt-12 group-hover:opacity-25 transition`}>Transitions & Editing</span>
             </div>
             </div>
-        <div className="flex-col content-center justify-between hidden xl:flex" onMouseEnter={()=>{four.current.scrollIntoView({behavior: 'smooth'})}}>
+        <div className="flex-col content-center justify-between hidden xl:flex group" onMouseEnter={()=>{four.current.scrollIntoView({behavior: 'smooth'})}}>
             <hr className="border w-[80%] m-auto" />
-            <div className="py-16 px-60">
-                <span className={`font-bold ${roboto.className} text-8xl`}>Jennifer</span>
-                <span className={`${roboto.className} float-right mt-12`}>Transitions & Storyboarding</span>
+            <div className="py-16 px-60 hover:px-56 transition-all">
+                <span className={`font-bold ${roboto.className} text-8xl group-hover:opacity-25 transition`}>Jennifer</span>
+                <span className={`${roboto.className} float-right mt-12 group-hover:opacity-25 transition`}>Transitions & Storyboarding</span>
             </div>
             <hr className="border w-[80%] m-auto" />
             </div>
