@@ -1,13 +1,17 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { Roboto, Inter_Tight } from "next/font/google";
+import { Roboto } from "next/font/google";
+import localFont from 'next/font/local'
 import Navbar from "./components/navbar";
 import Recentwork from "./components/recentwork";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
-const roboto_bold = Inter_Tight({ weight: "500", subsets: ["latin"] });
+
+const neue = localFont({
+  src:"./Neue.otf"
+})
 
 export default function Home() {
   const [nav,setNav] = useState(false);
@@ -22,33 +26,17 @@ export default function Home() {
   const hoverHandler = ()=>{
     setHover(!hover);
   }
-  const [direction,setDirection] = useState(true);
-  let [prev,setPrev] = useState(0);
-  const ref = useRef();
-  useEffect(()=>{
-    if (typeof window !== 'undefined') {
-      window.addEventListener("scroll",()=>{
-      if(prev>window.scrollY){
-        setDirection(false);
-      }
-      if(prev<window.scrollY){
-        setDirection(true);
-      }
-      prev = window.scrollY
-      })
-      // Code that depends on `window` or browser APIs
-    }
-    
-  },[])
   return(<>
   {nav&&(<Navbar/>)}  
-  <div className="h-[100vh] bg-[#999D9E] pt-2">
+  <div className="h-[100vh] bg-black p-5">
     <span className={`ml-5 text-white ${roboto.className}`}>© Code By Ash</span>
-    <div className={`absolute w-[100vw] text-white bottom-24`}>
-      <Marquee direction="right" play={!direction} speed={400} className="overflow-hidden" ref={ref}>
-      <Marquee speed={200} direction="left" className={`overflow-hidden text-9xl ${roboto_bold.className}`}>Aman Kumar - SherGill</Marquee>
-      </Marquee>
+    <span className={`float-right mr-5 text-white -rotate-45`}>{"<-"}</span>
+    <h1 className={`float-right mr-5 text-white hidden xl:block mt-20 text-3xl`}>Freelance <h1> Video Editor</h1></h1>
+    <h1 className={`absolute text-white ${neue.className} text-6xl mt-8 w-[80%] ml-5 xl:w-[40%] xl:text-center xl:z-50 xl:right-96 xl:mt-60 xl:hidden`}>Welcome To My Website</h1>
+    <div className="hidden xl:block">
+    <Marquee speed={200} className={`${neue.className} absolute text-white text-[80vh]`}><span className="invisible">A</span> Aman Shergill</Marquee>
     </div>
+    <img src="aman.png" alt="" loading="lazy" className="xl:h-[115vh] absolute bottom-0 xl:right-[30%] xl:left-auto left-0 xl:z-50" />
   </div>
   <div className="px-8 pt-8 xl:p-44">
     <div className={`${roboto.className} text-3xl xl:w-[60%] leading-relaxed helping inline-block xl:ml-24 overflow-hidden`}>

@@ -103,57 +103,57 @@ export default function Recentwork(){
         <div className="bg-[#EFEFEF] px-5 py-10 flex-grow-0">
           <Image src={"/gify1.gif"} width={450} height={450}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#D7E4EC] px-5 py-10">
           <Image src={"/gif3.gif"} width={300} height={300}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#D7D4CF] px-5 py-10">
           <Image src={"/gif2.gif"} width={450} height={450}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#22242B] px-5 py-10">
           <Image src={"/gif4.gif"} width={250} height={250}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#D7E4EC] px-5 py-10">
           <Image src={"/gif.gif"} width={250} height={250}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#22242B] px-5 py-10">
           <Image src={"/gif5.gif"} width={450} height={450}></Image>
         </div>
         <div className="bg-[#EFEFEF] px-5 py-10">
           <Image src={"/gif6.gif"} width={300} height={300}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#E8E3E5] px-5 py-10">
           <Image src={"/gif7.gif"} width={400} height={400}></Image>
         </div>
       </div>
       </Marquee>
         <Marquee direction="right">
-        <div className="hidden xl:flex gap-10 mt-20 justify-center ml-10" id="scroller">
+        <div className="hidden xl:flex gap-10 mt-10 justify-center ml-10" id="scroller">
         <div className="bg-[#EFEFEF] px-5 py-10 flex-grow-0">
           <Image src={"/gify1.gif"} width={450} height={450}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#D7E4EC] px-5 py-10">
           <Image src={"/gif3.gif"} width={300} height={300}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#D7D4CF] px-5 py-10">
           <Image src={"/gif2.gif"} width={450} height={450}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#22242B] px-5 py-10">
           <Image src={"/gif4.gif"} width={250} height={250}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#D7E4EC] px-5 py-10">
           <Image src={"/gif.gif"} width={250} height={250}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#22242B] px-5 py-10">
           <Image src={"/gif5.gif"} width={450} height={450}></Image>
         </div>
         <div className="bg-[#EFEFEF] px-5 py-10">
           <Image src={"/gif6.gif"} width={300} height={300}></Image>
         </div>
-        <div className="bg-[#EFEFEF] px-5 py-10">
+        <div className="bg-[#E8E3E5] px-5 py-10">
           <Image src={"/gif7.gif"} width={400} height={400}></Image>
         </div>
       </div>
       </Marquee>
-      <div className="bg-white h-[20vh] w-[100%] scrollup absolute rounded-b-full"></div>
+      <div className="bg-white h-[10vh] w-[100%] scrollup absolute rounded-b-full"></div>
       </div>)
 }

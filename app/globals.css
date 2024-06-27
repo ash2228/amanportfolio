@@ -220,7 +220,7 @@ to{
 @keyframes sliderUP{
     0%{
         transform: translate(0,0);
-        height: 105%;
+        height: 100%;
         position: absolute;
     }
 }
