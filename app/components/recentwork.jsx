@@ -1,6 +1,7 @@
 "use client"
 import {Roboto} from "next/font/google";
 import Image from "next/image";
+import Marquee from "react-fast-marquee"
 import { useState,useEffect, useRef } from "react";
 const roboto = Roboto({weight:"400",subsets:["latin"]});
 export default function Recentwork(){
@@ -21,9 +22,10 @@ export default function Recentwork(){
     setWorkHover(true);
   }
 
-    return(<div className="h-[400vh] xl:mt-20 px-8 mt-52">
-        <span className="xl:ml-[20%] text-[#aeaeae] text-xs">RECENT WORK</span>
-        <div className="xl:hidden flex flex-col gap-10 mt-24">
+
+    return(<div className="xl:mt-20 mt-52">
+        <span className="xl:ml-[20%] text-[#aeaeae] text-xs ml-10">RECENT WORK</span>
+        <div className="xl:hidden flex flex-col gap-10 mt-24 px-5">
             <div className="flex flex-col gap-5">
             <div className="bg-[#EFEFEF] py-10 px-5">
             <Image src="/thumb2.png" alt="" width={400} height={400} id="first" />
@@ -96,5 +98,62 @@ export default function Recentwork(){
             <Image src="/thumb5.png" alt="" width={400} height={400} ref={four} className="py-10 px-5 bg-green-500" />
             </div>
         </div>
+        <Marquee>
+        <div className="hidden xl:flex gap-10 mt-40 justify-center ml-10" id="scroller">
+        <div className="bg-[#EFEFEF] px-5 py-10 flex-grow-0">
+          <Image src={"/gify1.gif"} width={450} height={450}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif3.gif"} width={300} height={300}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif2.gif"} width={450} height={450}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif4.gif"} width={250} height={250}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif.gif"} width={250} height={250}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif5.gif"} width={450} height={450}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif6.gif"} width={300} height={300}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif7.gif"} width={400} height={400}></Image>
+        </div>
+      </div>
+      </Marquee>
+        <Marquee direction="right">
+        <div className="hidden xl:flex gap-10 mt-20 justify-center ml-10" id="scroller">
+        <div className="bg-[#EFEFEF] px-5 py-10 flex-grow-0">
+          <Image src={"/gify1.gif"} width={450} height={450}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif3.gif"} width={300} height={300}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif2.gif"} width={450} height={450}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif4.gif"} width={250} height={250}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif.gif"} width={250} height={250}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif5.gif"} width={450} height={450}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif6.gif"} width={300} height={300}></Image>
+        </div>
+        <div className="bg-[#EFEFEF] px-5 py-10">
+          <Image src={"/gif7.gif"} width={400} height={400}></Image>
+        </div>
+      </div>
+      </Marquee>
+      <div className="bg-white h-[20vh] w-[100%] scrollup absolute rounded-b-full"></div>
       </div>)
 }

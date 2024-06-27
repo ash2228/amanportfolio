@@ -212,3 +212,15 @@ to{
 .scaleDiv{
     animation:scaleNav linear 0.5s;
 }
+.scrollup{
+    animation: sliderUP linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+}
+@keyframes sliderUP{
+    0%{
+        transform: translate(0,0);
+        height: 105%;
+        position: absolute;
+    }
+}

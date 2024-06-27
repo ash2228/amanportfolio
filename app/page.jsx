@@ -4,6 +4,7 @@ import { Roboto, Inter_Tight } from "next/font/google";
 import Navbar from "./components/navbar";
 import Recentwork from "./components/recentwork";
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 const roboto_bold = Inter_Tight({ weight: "500", subsets: ["latin"] });
@@ -66,6 +67,12 @@ export default function Home() {
       <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
       </button>
       <Recentwork />
+      <div className="bg-[#1C1D20] pt-[30vh] xl:px-72 pb-20 xl:pb-60 px-10">
+        <h1 className={`${roboto.className} text-white xl:text-8xl text-5xl whitespace-pre-wrap inline-block xL:w-[80%]`}>Let's work together</h1>
+        <button className="bg-[#455CE9] h-[200px] w-[200px] rounded-full text-white xl:mt-0 mt-16 xl:float-right hover:bg-blue-700 transition-colors">
+          Get In Touch
+        </button>
+      </div>
     </>
   );
 }
