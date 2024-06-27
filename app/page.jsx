@@ -31,7 +31,7 @@ export default function Home() {
   <div className="h-[100vh] bg-black p-5">
     <span className={`ml-5 text-white ${roboto.className}`}>© Code By Ash</span>
     <span className={`float-right mr-5 text-white -rotate-45`}>{"<-"}</span>
-    <h1 className={`float-right mr-5 text-white hidden xl:block mt-20 text-3xl`}>Freelance <h1> Video Editor</h1></h1>
+    <h1 className={`float-right mr-5 text-white hidden xl:block mt-20 text-3xl`}>Freelance <span className="block">Video Editor</span></h1>
     <h1 className={`absolute text-white ${neue.className} text-6xl mt-8 w-[80%] ml-5 xl:w-[40%] xl:text-center xl:z-50 xl:right-96 xl:mt-60 xl:hidden`}>Welcome To My Website</h1>
     <div className="hidden xl:block">
     <Marquee speed={200} className={`${neue.className} absolute text-white text-[80vh]`}><span className="invisible">A</span> Aman Shergill</Marquee>
@@ -56,7 +56,7 @@ export default function Home() {
       </button>
       <Recentwork />
       <div className="bg-[#1C1D20] pt-[30vh] xl:px-72 pb-20 xl:pb-60 px-10">
-        <h1 className={`${roboto.className} text-white xl:text-8xl text-5xl whitespace-pre-wrap inline-block xl:w-[80%]`}>Let's work together</h1>
+        <h1 className={`${roboto.className} text-white xl:text-8xl text-5xl whitespace-pre-wrap inline-block xl:w-[80%]`}>Let&apos;s work together</h1>
         <button className="bg-[#455CE9] h-[200px] w-[200px] rounded-full text-white xl:mt-0 mt-16 xl:float-right hover:bg-blue-700 transition-colors">
           Get In Touch
         </button>
