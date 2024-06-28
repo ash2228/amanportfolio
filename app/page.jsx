@@ -33,7 +33,7 @@ export default function Home() {
     <span className={`float-right mr-5 text-white -rotate-45`}>{"<-"}</span>
     <h1 className={`float-right mr-5 text-white hidden xl:block mt-20 text-3xl`}>Freelance <span className="block">Video Editor</span></h1>
     <h1 className={`absolute text-white ${neue.className} text-6xl mt-8 w-[80%] ml-5 xl:w-[40%] xl:text-center xl:z-50 xl:right-96 xl:mt-60 xl:hidden`}>Welcome To My Website</h1>
-    <div className="hidden xl:block absolute">
+    <div className="hidden xl:block">
     <Marquee speed={200} className={`${neue.className} text-white text-[80vh]`}><span className="invisible">A</span> Aman Shergill</Marquee>
     </div>
     <img src="aman.png" alt="" loading="lazy" className="xl:h-[115vh] absolute bottom-0 xl:right-[30%] xl:left-auto left-0 xl:z-50" />
