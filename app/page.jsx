@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { Roboto } from "next/font/google";
+import { M_PLUS_1, Roboto } from "next/font/google";
 import localFont from 'next/font/local'
 import Navbar from "./components/navbar";
 import Recentwork from "./components/recentwork";
@@ -26,10 +26,34 @@ export default function Home() {
   const hoverHandler = ()=>{
     setHover(!hover);
   }
+  let [word,setWord] = useState("Hello");
+  let list = ["Halo","你好","Hola","नमस्ते","bonjour",'ਸਤ ਸ੍ਰੀ ਅਕਾਲ','今日は'];
+  useEffect(()=>{
+    window.scrollTo(0,0);
+    if(document!==undefined){
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+    }
+    let i = 0;
+    let a = setInterval(()=>{
+      setWord(list[i++]);
+      if(i==list.length){
+        if(document!==undefined){
+          document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+        }
+        setAnimationDone(true);
+        animationDone = true;
+        clearInterval(a);
+      }
+    },[100]);
+  },[])
+  let [animationDone,setAnimationDone] = useState(false)
   return(<>
-  {nav&&(<Navbar/>)}  
+  {nav&&(<Navbar/>)}
+  <div className={`absolute transition h-[100vh] duration-1000 w-[100vw] bg-[#1C1D20] z-[200] overflow-hidden flex content-center justify-center ${animationDone&&"hello"}`}>
+    <div className={`${neue.className} text-white text-5xl left-0 right-0 text-center my-auto`}>{word}</div>
+  </div>
   <div className="h-[100vh] bg-black p-5">
-    <span className={`ml-5 text-white ${roboto.className}`}>© Code By Ash</span>
+    <span className={`ml-5 text-white ${roboto.className} underline underline-offset-2 cursor-pointer`} onClick={()=>{window.open("https://kratosmort.info","_blank")}}>© Code By Ash</span>
     <span className={`float-right mr-5 text-white -rotate-45`}>{"<-"}</span>
     <h1 className={`float-right mr-5 text-white hidden xl:block mt-20 text-3xl`}>Freelance <span className="block">Video Editor</span></h1>
     <h1 className={`absolute text-white ${neue.className} text-6xl mt-8 w-[80%] ml-5 xl:w-[40%] xl:text-center xl:z-50 xl:right-96 xl:mt-60 xl:hidden`}>Welcome To My Website</h1>

@@ -224,3 +224,16 @@ to{
         position: absolute;
     }
 }
+@keyframes spiderman {
+    20%{
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+    }
+    100%{
+        transform: translate(0,-100vh);
+        display: hidden;
+    }
+}
+.hello{
+    animation: spiderman 1s forwards ease-in-out;
+}

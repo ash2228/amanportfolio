@@ -48,7 +48,7 @@ export default function Recentwork(){
                 <span className="float-right">2024</span>
             </div>
             </div>
-            <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:hidden mx-auto aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
+            <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:hidden mx-auto aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler} onClick={()=>{window.open("https://drive.google.com/drive/folders/13fu7rRuqOe8i1dDoOCC_qb9CPh-Yyxgu?usp=sharing","_blank")}}>
       <h1 className="absolute z-50 top-[23px] left-[40px]">More work<sup>6</sup></h1>
       <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
       </button>
@@ -85,7 +85,7 @@ export default function Recentwork(){
             </div>
         </div>
         <div className="flex content-center justify-center">
-        <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:inline hidden mt-24 aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler}>
+        <button className="z-[100] text-black hover:text-white h-[70px] border-2 w-[170px] rounded-full xl:inline hidden mt-24 aboutBtn overflow-hidden" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler} onClick={()=>{window.open("https://drive.google.com/drive/folders/13fu7rRuqOe8i1dDoOCC_qb9CPh-Yyxgu?usp=sharing","_blank")}}>
       <h1 className="absolute z-50 top-[23px] left-[40px]">More work<sup>4</sup></h1>
       <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
       </button>
