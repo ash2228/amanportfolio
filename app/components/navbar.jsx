@@ -1,9 +1,14 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState,useEffect} from "react";
+import { useState,useEffect,useContext} from "react";
+import { Contact,HOME, Work } from "../context";
 
 
 export default function Navbar() {
+  const c = useContext(Contact);
+  const Home = useContext(HOME);
+  const works = useContext(Work);
+  console.log(works)
   let [nav,setNav] = useState(false);
   let [i,setI] = useState(0);
   let [hover,setHover] = useState(false);
@@ -68,7 +73,7 @@ const hoverFalse = (e)=>{
     setHover(false);
     
   }
-  let [btnHover,setbtnHover] = useState(false)
+  let [btnHover,setbtnHover] = useState(false);
   return (
     <>
     <div onClick={navHandler} className={`${nav?"bg-[#455CE9]":"bg-black"} z-[150] transition-colors duration-500 rounded-full h-[100px] w-[100px] top-5 right-5 float-right fixed text-white overflow-hidden`} id="navBtn" onMouseEnter={()=>setbtnHover(!btnHover)} onMouseLeave={()=>setbtnHover(!btnHover)}>
@@ -89,10 +94,10 @@ const hoverFalse = (e)=>{
                <li className={`${fourth?"block":"invisible"} transition font-extrabold mr-5`}>.</li>
                 </div> 
                <div className="flex flex-col">
-               <li className={`cursor-pointer`} id={nav?"home":"home-leave"}>Home</li> 
-               <li className={`cursor-pointer`} onMouseEnter={hoverTrue} onMouseLeave={hoverFalse} id={nav?"work":"work-leave"}>Work</li> 
+               <li className={`cursor-pointer`} id={nav?"home":"home-leave"} onClick={()=>{Home.current.scrollIntoView({behavior:"smooth"});navHandler()}}>Home</li> 
+               <li className={`cursor-pointer`} onMouseEnter={hoverTrue} onMouseLeave={hoverFalse} id={nav?"work":"work-leave"} onClick={()=>{works.current.scrollIntoView({behavior:"smooth"});navHandler()}}>Work</li> 
                <li className={`cursor-pointer`} onMouseEnter={hoverTrue} onMouseLeave={hoverFalse} id={nav?"about":"about-leave"}>About</li>
-               <li className={`cursor-pointer`} onMouseEnter={hoverTrue} onMouseLeave={hoverFalse} id={nav?"contact":"contact-leave"}>Contact</li>
+               <li className={`cursor-pointer`} onMouseEnter={hoverTrue} onMouseLeave={hoverFalse} id={nav?"contact":"contact-leave"} onClick={()=>{c.current.scrollIntoView({behavior:"smooth"});navHandler()}}>Contact</li>
                 </div> 
             </div>
         </div>

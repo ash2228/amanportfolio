@@ -5,15 +5,18 @@ import localFont from 'next/font/local'
 import Navbar from "./components/navbar";
 import Recentwork from "./components/recentwork";
 import Marquee from "react-fast-marquee";
+import { Contact,HOME,Work} from "./context";
 import Image from "next/image";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
-
 const neue = localFont({
   src:"./Neue.otf"
 })
 
 export default function Home() {
+  const ref = useRef();
+  const homeref = useRef();
+  const workref = useRef();
   const [nav,setNav] = useState(false);
   if (typeof window !== 'undefined') {
     window.addEventListener("scroll",()=>{
@@ -46,14 +49,17 @@ export default function Home() {
       }
     },[100]);
   },[])
-  let [animationDone,setAnimationDone] = useState(false)
+  let [animationDone,setAnimationDone] = useState(false);
   return(<>
+  <Contact.Provider value={ref}>
+  <HOME.Provider value={homeref}>
+  <Work.Provider value={workref}>
   {nav&&(<Navbar/>)}
   <div className={`absolute transition h-[100vh] duration-1000 w-[100vw] bg-[#1C1D20] z-[200] overflow-hidden flex content-center justify-center ${animationDone&&"hello"}`}>
     <div className={`${neue.className} text-white text-5xl left-0 right-0 text-center my-auto`}>{word}</div>
   </div>
   <div className="h-[100vh] bg-black p-5">
-    <span className={`ml-5 text-white ${roboto.className} underline underline-offset-2 cursor-pointer`} onClick={()=>{window.open("https://kratosmort.info","_blank")}}>© Code By Ash</span>
+    <span className={`ml-5 text-white ${roboto.className} underline underline-offset-2 cursor-pointer`} onClick={()=>{window.open("https://kratosmort.info","_blank")}} ref={homeref}>© Code By Ash</span>
     <span className={`float-right mr-5 text-white -rotate-45`}>{"<-"}</span>
     <h1 className={`float-right mr-5 text-white hidden xl:block mt-20 text-3xl`}>Freelance <span className="block">Video Editor</span></h1>
     <h1 className={`absolute text-white ${neue.className} text-6xl mt-8 w-[80%] ml-5 xl:w-[40%] xl:text-center xl:z-50 xl:right-96 xl:mt-60 xl:hidden`}>Welcome To My Website</h1>
@@ -78,8 +84,10 @@ export default function Home() {
       <h1 className="absolute z-50 top-[75px] left-[50px]">About Me</h1>
       <div className={`${hover?"hovered":"notHovered"} h-[100%] w-[100%] rounded-full`}></div>
       </button>
+      <div ref={workref}>
       <Recentwork />
-      <div className="bg-[#1C1D20] pt-[30vh] xl:px-72 pb-20 xl:pb-60 px-10">
+      </div>
+      <div className="bg-[#1C1D20] pt-[30vh] xl:px-72 pb-20 xl:pb-60 px-10" ref={ref}>
         <h1 className={`${roboto.className} text-white xl:text-8xl text-5xl whitespace-pre-wrap inline-block xl:w-[80%]`}>Let&apos;s work together</h1>
         <a href="mailto:amanshrgll143@gmail.com">
         <button className="bg-[#455CE9] h-[200px] w-[200px] rounded-full text-white xl:mt-0 mt-16 xl:float-right hover:bg-blue-700 transition-colors">
@@ -87,6 +95,9 @@ export default function Home() {
         </button>
         </a>
       </div>
+      </Work.Provider>
+      </HOME.Provider>
+      </Contact.Provider>
     </>
   );
 }
