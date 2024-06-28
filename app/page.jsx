@@ -36,7 +36,7 @@ export default function Home() {
     <div className="hidden xl:block">
     <Marquee speed={200} className={`${neue.className} text-white text-[80vh]`}><span className="invisible">A</span> Aman Shergill</Marquee>
     </div>
-    <img src="aman.png" alt="" loading="lazy" className="xl:h-[115vh] absolute bottom-0 xl:right-[30%] xl:left-auto left-0 xl:z-50" />
+    <img src="aman.png" alt="" loading="lazy" className="xl:h-[115vh] absolute bottom-0 xl:right-[30%] xl:left-auto left-0 xl:z-50 w-[100vw]" />
   </div>
   <div className="px-8 pt-8 xl:p-44">
     <div className={`${roboto.className} text-3xl xl:w-[60%] leading-relaxed helping inline-block xl:ml-24 overflow-hidden`}>
