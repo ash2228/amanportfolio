@@ -47,7 +47,7 @@ export default function Home() {
         animationDone = true;
         clearInterval(a);
       }
-    },[100]);
+    },[300]);
   },[])
   let [animationDone,setAnimationDone] = useState(false);
   return(<>
