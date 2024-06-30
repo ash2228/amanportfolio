@@ -34,6 +34,7 @@ export default function Home() {
   useEffect(()=>{
     window.scrollTo(0,0);
     if(document!==undefined){
+      window.scrollTo(0,0);
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
     }
     let i = 0;
